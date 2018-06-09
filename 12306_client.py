@@ -34,13 +34,15 @@ to=areatocode[to1]
 #isstudent=input("是学生吗？是：1，不是：0")
 isstudent="0"
 #date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
-date = "2018-06-07"
+date = "2018-06-10"
 if(isstudent=="0"):
     student="ADULT"
 else:
     student="0X00"
+'''
 url="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date="+date+"&\
 leftTicketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
+
 context = ssl._create_unverified_context()
 data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
 #print(data)
@@ -50,7 +52,7 @@ logging.info(data)
 patrst01 = '"result":\[(.*?)\]'
 rst01 = re.compile(patrst01).findall(data)[0]
 logging.info(rst01)
-input("key continue \n")
+#input("key continue \n")
 allcheci = rst01.split(",")
 checimap_pat = '"map":({.*?})'
 checimap = eval(re.compile(checimap_pat).findall(data)[0])
@@ -89,6 +91,8 @@ if(isdo==1 or isdo=="1"):
 else:
     raise Exception("输入不是1，结束执行")
 print("Cookie处理中…")
+'''
+
 #以下进行登陆操作
 #建立cookie处理
 cjar=http.cookiejar.CookieJar()
@@ -96,21 +100,29 @@ opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cjar))
 urllib.request.install_opener(opener)
 #以下进入自动登录部分
 loginurl="https://kyfw.12306.cn/otn/login/init#"
+
 req0 = urllib.request.Request(loginurl)
 req0.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lik\
 e Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
 req0data=urllib.request.urlopen(req0).read().decode("utf-8","ignore")
 
 yzmurl="https://kyfw.12306.cn/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand"
+#/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand&0.4042776145241709
 while True:
     urllib.request.urlretrieve(yzmurl,"./12306_yzm.png")
     yzm=input("请输入验证码，输入第几张图片即可")
     if(yzm!="re"):
         break
+'''
 #x坐标(35,112,173,253)，y坐标(45)
 #x坐标(35,112,173,253)，y坐标(114)
 pat1='"(.*?)"'
+
 allpic=re.compile(pat1).findall(yzm)
+print(allpic)
+'''
+allpic = yzm
+
 def getxy(pic):
     if(pic==1):
         xy=(35,45)
@@ -133,9 +145,31 @@ allpicpos=""
 for i in allpic:
     thisxy=getxy(int(i))
     for j in thisxy:
+        #print(j)
         allpicpos=allpicpos+str(j)+","
+        #print(allpicpos)
 allpicpos2=re.compile("(.*?).$").findall(allpicpos)[0]
+
+'''
+#38,107,40,42,110,41,174,46,270,42,256,113,197,120,110,107
+vcode_position = ['43,37', '114,35', '186,37', '255,39', '40,111', '111,107', '177,112', '252,113']
+#构造一个序列，因为序列的下标默认是以0开始，所以第一个我们随意输入一个字符串，反正用不到，2-9个位置输入1-8的坐标，以字符串的格式输入
+#position = input("请输入验证码位置：")
+position = yzm
+#这里手动输入坐标位置，自动识别后面再讲思路
+data_vcode_position = []
+for point in position:
+    data_vcode_position.append(vcode_position[int(point)])
+#输入的数字，遍历出来，重新组成新的序列（元素下标是数字表示，input输入的都是字符，使用int将字符转为数字）
+data_point = ','.join(data_vcode_position)
+#通过','将新序列的元素进行合并成字符串，即可作为post提交的参数
+
+
+allpicpos2 = data_point
+'''
+
 print(allpicpos2)
+#input("continue")
 #post验证码验证
 yzmposturl="https://kyfw.12306.cn/passport/captcha/captcha-check"
 yzmpostdata =urllib.parse.urlencode({
