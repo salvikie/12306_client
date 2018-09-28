@@ -56,12 +56,15 @@ logging.info(rst01)
 allcheci = rst01.split(",")
 checimap_pat = '"map":({.*?})'
 checimap = eval(re.compile(checimap_pat).findall(data)[0])
-print("车次\t出发站名\t到达站名\t出发时间\t到达时间\t一等座\t二等座\t硬座\t无座")
+#print("车次\t出发站名\t到达站名\t出发时间\t到达时间\t一等座\t二等座\t硬座\t无座")
+print("车次\t出发站名\t到达站名\t出发时间\t到达时间\t二等座")
 for i in range(0, len(allcheci)):
     try:
         thischeci=allcheci[i].split("|")
         #[3]---code
         code=thischeci[3]
+        if code[:1] != "G":
+            continue
         #[6]---fromname
         fromname=thischeci[6]
         fromname=checimap[fromname]
@@ -76,12 +79,20 @@ for i in range(0, len(allcheci)):
         yz=thischeci[31]
         #[29]---wz
         wz=thischeci[30]
+        if str(wz) == "无":
+            continue
         #[30]---ze
         ze=thischeci[29]
+
         #[31]---zy
         zy=thischeci[26]
-        print(code+"\t"+fromname+"\t"+toname+"\t"+stime+"\t"+atime+"\t"+str(zy)+"\t"+str(ze)+"\t\
-              "+str(yz)+"\t"+str(wz))
+
+
+        #print(code+"\t"+fromname+"\t"+toname+"\t"+stime+"\t"+atime+"\t"+str(zy)+"\t"+str(ze)+"\t\
+             # "+str(yz)+"\t"+str(wz))
+        #print(code + "\t" + fromname + "\t" + toname + "\t" + stime + "\t" + atime + "\t" + str(wz))
+        print("%-20s%-20s%-20s%-20s%-20s%-20s\n" % (code, fromname, toname, stime, atime, str(wz)))
+
     except Exception as err:
         pass
 isdo=input("查票完成，请输入1继续…")
