@@ -34,19 +34,19 @@ to=areatocode[to1]
 #isstudent=input("是学生吗？是：1，不是：0")
 isstudent="0"
 #date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
-date = "2018-06-10"
+date = "2018-10-10"
 if(isstudent=="0"):
     student="ADULT"
 else:
     student="0X00"
-'''
-url="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date="+date+"&\
+
+url="https://kyfw.12306.cn/otn/leftTicket/queryA?leftTicketDTO.train_date="+date+"&\
 leftTicketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
 
 context = ssl._create_unverified_context()
 data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
 #print(data)
-logging.info(data)
+#logging.info(data)
 
 
 patrst01 = '"result":\[(.*?)\]'
@@ -91,7 +91,7 @@ if(isdo==1 or isdo=="1"):
 else:
     raise Exception("输入不是1，结束执行")
 print("Cookie处理中…")
-'''
+
 
 #以下进行登陆操作
 #建立cookie处理
@@ -108,9 +108,10 @@ req0data=urllib.request.urlopen(req0).read().decode("utf-8","ignore")
 
 yzmurl="https://kyfw.12306.cn/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand"
 #/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand&0.4042776145241709
+
 while True:
     urllib.request.urlretrieve(yzmurl,"./12306_yzm.png")
-    yzm=input("请输入验证码，输入第几张图片即可")
+    yzm=input("请输入验证码，输入第几张图片即可(例如348)\n")
     if(yzm!="re"):
         break
 '''
@@ -122,6 +123,8 @@ allpic=re.compile(pat1).findall(yzm)
 print(allpic)
 '''
 allpic = yzm
+
+
 
 def getxy(pic):
     if(pic==1):
@@ -169,7 +172,7 @@ allpicpos2 = data_point
 '''
 
 print(allpicpos2)
-#input("continue")
+input("continue")
 #post验证码验证
 yzmposturl="https://kyfw.12306.cn/passport/captcha/captcha-check"
 yzmpostdata =urllib.parse.urlencode({
@@ -247,7 +250,7 @@ while True:
 6 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
         initdata=urllib.request.urlopen(reqinit).read().decode("utf-8","ignore")
         #再爬对应订票信息
-        bookurl="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date="+date+"&leftTi\
+        bookurl="https://kyfw.12306.cn/otn/leftTicket/queryA?leftTicketDTO.train_date="+date+"&leftTi\
 cketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
         req4 = urllib.request.Request(bookurl)
         req4.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHT\
@@ -265,7 +268,7 @@ ML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
         for i in range(0,len(allcheci)):
             try:
                 thischeci=allcheci[i].split("|")
-                #print(thischeci)
+                print(thischeci)
                 #[3]---code
                 thiscode1=thischeci[3]
                 code.append(thiscode1)

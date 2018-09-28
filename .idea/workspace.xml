@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73aecb60-59a5-48ac-b623-a3aa213a1296" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12306_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/12306_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12306_yzm.png" beforeDir="false" afterPath="$PROJECT_DIR$/12306_yzm.png" afterDir="false" />
@@ -19,33 +20,10 @@
       <file leaf-file-name="12306_client.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/12306_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="393" column="34" selection-start-line="393" selection-start-column="34" selection-end-line="393" selection-end-column="34" />
+            <state relative-caret-position="235">
+              <caret line="324" column="47" selection-start-line="324" selection-start-column="38" selection-end-line="324" selection-end-column="47" />
               <folding>
                 <element signature="e#42#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="49" column="15" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="response.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/response.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,6 +45,31 @@
       <find>ssl</find>
       <find>context</find>
       <find>tk</find>
+      <find>start</find>
+      <find>date</find>
+      <find>PopDialogHandler</find>
+      <find>need_data</find>
+      <find>exe_path</find>
+      <find>xiadan</find>
+      <find>xiadan.exe</find>
+      <find>get_today_ipo_data</find>
+      <find>prepare1</find>
+      <find>auto_ipo</find>
+      <find>AUTO_IPO_SELECT_ALL_BUTTON_CONTROL_ID</find>
+      <find>_switch_left_menus</find>
+      <find>_get_left_menus_handle</find>
+      <find>get_item</find>
+      <find>_main.window</find>
+      <find>AUTO_IPO_MENU_PATH</find>
+      <find>COMMON_GRID_CONTROL_ID</find>
+      <find>_get_grid_data</find>
+      <find>opener</find>
+      <find>req5data</find>
+      <find>traindata</find>
+      <find>train_location_pat</find>
+      <find>token</find>
+      <find>thischeci</find>
+      <find>thiscode</find>
     </findStrings>
     <dirStrings>
       <dir>F:\python_learning\12306_client</dir>
@@ -80,54 +83,39 @@
       <list>
         <option value="$PROJECT_DIR$/../itchat_client/wechat_client.py" />
         <option value="$PROJECT_DIR$/../jiandan/jiandan.py" />
+        <option value="$PROJECT_DIR$/../easytrader-master/ht.json" />
+        <option value="$PROJECT_DIR$/../easytrader-master/ht_client.json" />
+        <option value="$PROJECT_DIR$/../easytrader-master/cli.py" />
+        <option value="$PROJECT_DIR$/../easytrader-master/easytrader/config/client.py" />
+        <option value="$PROJECT_DIR$/my12306.py" />
         <option value="$PROJECT_DIR$/12306_client.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-15" />
-    <option name="y" value="35" />
-    <option name="width" value="1260" />
-    <option name="height" value="944" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="39" />
+    <option name="y" value="76" />
+    <option name="width" value="1128" />
+    <option name="height" value="910" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="47feb1d3:ProjectViewModuleNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="12306_client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easyquant-master" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\python_learning\easytrader-master" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -155,6 +143,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/12306_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="cli" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../easytrader-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../easytrader-master/cli.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,10 +206,12 @@
       <item itemvalue="Python.12306_client" />
       <item itemvalue="Python.wechat_client" />
       <item itemvalue="Python.jiandan" />
+      <item itemvalue="Python.cli" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.12306_client" />
+        <item itemvalue="Python.cli" />
         <item itemvalue="Python.wechat_client" />
         <item itemvalue="Python.jiandan" />
       </list>
@@ -232,18 +240,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-15" y="35" width="1260" height="944" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23731588" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287841" />
-      <window_info anchor="bottom" auto_hide="true" id="Event Log" order="10" sideWeight="0.5015625" side_tool="true" weight="0.32506204" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3287841" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3287841" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.4984375" weight="0.17493796" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23052464" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32830626" />
+      <window_info anchor="bottom" auto_hide="true" id="Event Log" order="9" sideWeight="0.5015625" side_tool="true" weight="0.32482597" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32946634" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32830626" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32830626" />
+      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.4984375" weight="0.17401393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3287841" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32830626" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995037" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -258,152 +265,245 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/12306_client.py">
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2976">
-          <caret line="124" column="19" lean-forward="true" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
-          <folding>
-            <element signature="e#42#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/request.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/docs/install.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="384">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/response.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/docs/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="788">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12306_client.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/docs/help.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/yh_clienttrader.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/xqtrader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#42#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/webtrader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../itchat_client/wechat_client.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/follower.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/joinquant_follower.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="764">
+          <caret line="146" column="33" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../jiandan/jiandan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="24">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../itchat_client/wechat_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../jiandan/jiandan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12306_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="51" column="42" lean-forward="true" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../demo.py" />
-    <entry file="file://$PROJECT_DIR$/12306_yzm.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../demo.py" />
-    <entry file="file://$PROJECT_DIR$/../jiandan/jiandan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../itchat_client/wechat_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/itchat/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/test-requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/itchat/components/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144" />
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1236" />
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/_collections.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/.bumpversion.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/connectionpool.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/redis.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/unitest_demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="-7702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/yh.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/yjb.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/MANIFEST.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/mkdocs.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/xq.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python/Python365/Lib/site-packages/urllib3/request.py">
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/yh_client.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/ht.json" />
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/gj_client.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/ht_clienttrader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="15" />
+          <caret line="61" column="19" lean-forward="true" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/xq.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/custom/fixeddataengine.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/custom/fixedmainengine.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/custom_engine_demo.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/gf.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/ht.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easyquant-master/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/docs/usage.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6480">
+          <caret line="270" selection-start-line="270" selection-end-line="270" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/ht_client.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/config/gf.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/clienttrader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="358" column="22" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/config/global.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/config/xq.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../easytrader-master/easytrader/config/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my12306.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="152" column="6" lean-forward="true" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#103#124#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/12306_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="393" column="34" selection-start-line="393" selection-start-column="34" selection-end-line="393" selection-end-column="34" />
+        <state relative-caret-position="235">
+          <caret line="324" column="47" selection-start-line="324" selection-start-column="38" selection-end-line="324" selection-end-column="47" />
           <folding>
             <element signature="e#42#63#0" expanded="true" />
           </folding>
