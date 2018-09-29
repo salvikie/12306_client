@@ -1,9 +1,16 @@
+#!/usr/bin/env python3
+# coding:UTF-8
+
 import requests
 import itchat
 import time
 import os
+from train_book import ticket_query
+from train_book import pre_login
+from train_book import login
+from train_book import ticket_book
 #import cv2
-#import train_book
+
 
 sendMsg = u"{消息助手}：暂时无法回复"
 usageMsg = u"使用方法：\n1.运行CMD命令：cmd xxx (xxx为命令)\n" \
@@ -11,9 +18,12 @@ usageMsg = u"使用方法：\n1.运行CMD命令：cmd xxx (xxx为命令)\n" \
            u"2.获取当前电脑用户：cap\n3.启用消息助手(默认关闭)：ast\n" \
            u"4.关闭消息助手：astc"
 flag = 0 #消息助手开关
+
+'''
 nowTime = time.localtime()
 filename = str(nowTime.tm_mday)+str(nowTime.tm_hour)+str(nowTime.tm_min)+str(nowTime.tm_sec)+".txt"
 myfile = open(filename, 'w')
+'''
 
 @itchat.msg_register('Text')
 def text_reply(msg):
@@ -21,6 +31,9 @@ def text_reply(msg):
     message = msg['Text']
     fromName = msg['FromUserName']
     toName = msg['ToUserName']
+
+    global train_date
+    global train_no
 
     if toName == "filehelper":
         '''
@@ -39,16 +52,83 @@ def text_reply(msg):
         if message == "astc":
             flag = 0
             itchat.send("消息助手已关闭", "filehelper")
-        '''
-        if message == "2018-10-10":
-            ticket_query(message)
-        '''
+        #auto
+        if message == "auto":
+            flag = 2
+            itchat.send("自动抢票开启", "filehelper")
+        if message == "manual":
+            flag = 0
+            itchat.send("自动抢票关闭", "filehelper")
+
+        # 2018-10-10
+        if message[0:4] == "2018":
+            dict_left_ticket = ticket_query(message)
+
+            if len(dict_left_ticket) != 0:
+                for key, value in dict_left_ticket.items():
+                    print("\"%s\":\"%s\"" % (key, value))
+                    itchat.send(key, "filehelper")
+
+            while flag == 2 and len(dict_left_ticket) == 0:
+                dict_left_ticket = ticket_query(message)
+
+                if len(dict_left_ticket) != 0:
+                    for key, value in dict_left_ticket.items():
+                        print("\"%s\":\"%s\"" % (key, value))
+                        itchat.send(key, "filehelper")
+                    break
+
+            flag = 3
+            train_date = message[0:10]
+
+
+        # G1002
+        if message[0:1] == "G" and flag == 3:
+            pre_login()
+            itchat.send('@img@%s' % u'12306_yzm.png', 'filehelper')
+            flag = 4
+            train_no = message
+            print(train_no)
+
+        # V348
+        if message[0:1] == "V" and flag == 4:
+            verification_code = message.strip('V')
+            print(verification_code)
+            rc = login(verification_code)
+            if rc == -1:
+                itchat.send("验证码错误", "filehelper")
+                flag = 3
+            else:
+                print(train_no + train_date)
+                ticket_book(train_no, train_date)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     elif flag == 1:
         itchat.send(sendMsg, fromName)
+        '''
         myfile.write(message)
         myfile.write("\n")
         myfile.flush()
+        '''
 
 def get_news():
     url = "http://open.iciba.com/dsapi"

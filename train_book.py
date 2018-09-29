@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# coding:UTF-8
+
 '''
 @初始配置项
 Author:svk
@@ -161,8 +164,9 @@ def ticket_query(date, source="深圳北", destination="衡阳东", student = "A
         traindata[code_list[i]] = secretStr_list[i]
         # 订票-第1次post-主要进行确认用户状态
 
+    return trainzy
 
-def login(user="997482021@qq.com", password="lq199023132"):
+def pre_login():
     print("Cookie处理中…")
 
     # 以下进行登陆操作
@@ -181,20 +185,13 @@ def login(user="997482021@qq.com", password="lq199023132"):
     yzmurl = "https://kyfw.12306.cn/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand"
     # /passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand&0.4042776145241709
 
-    while True:
-        urllib.request.urlretrieve(yzmurl, "./12306_yzm.png")
-        yzm = input("请输入验证码，输入第几张图片即可(例如348)\n")
-        if (yzm != "re"):
-            break
-    '''
-    #x坐标(35,112,173,253)，y坐标(45)
-    #x坐标(35,112,173,253)，y坐标(114)
-    pat1='"(.*?)"'
+    urllib.request.urlretrieve(yzmurl, "./12306_yzm.png")
 
-    allpic=re.compile(pat1).findall(yzm)
-    print(allpic)
-    '''
-    allpic = yzm
+    print("获取验证码完成")
+
+
+def login(verification_code, user="997482021@qq.com", password="lq199023132"):
+    allpic = verification_code
 
     def getxy(pic):
         if (pic == 1):
@@ -243,7 +240,7 @@ def login(user="997482021@qq.com", password="lq199023132"):
     '''
 
     print(allpicpos2)
-    input("continue")
+    #input("continue")
     # post验证码验证
     yzmposturl = "https://kyfw.12306.cn/passport/captcha/captcha-check"
     yzmpostdata = urllib.parse.urlencode({
@@ -283,9 +280,12 @@ def login(user="997482021@qq.com", password="lq199023132"):
     req2_3 = urllib.request.Request(loginposturl3, loginpostdata3)
     req2_3.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lik\
     e Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
-    req2data_3 = urllib.request.urlopen(req2_3).read().decode("utf-8", "ignore")
-    pat_req2 = '"newapptk":"(.*?)"'
-    tk = re.compile(pat_req2, re.S).findall(req2data_3)[0]
+    try:
+        req2data_3 = urllib.request.urlopen(req2_3).read().decode("utf-8", "ignore")
+        pat_req2 = '"newapptk":"(.*?)"'
+        tk = re.compile(pat_req2, re.S).findall(req2data_3)[0]
+    except Exception as err:
+        return -1
 
     loginposturl4 = "https://kyfw.12306.cn/otn/uamauthclient"
     loginpostdata4 = urllib.parse.urlencode({
@@ -302,8 +302,9 @@ def login(user="997482021@qq.com", password="lq199023132"):
     e Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
     req3data = urllib.request.urlopen(req3).read().decode("utf-8", "ignore")
     print("登陆完成")
+    return 0
 
-def book_ticket(train_on, date, source="深圳北", destination="衡阳东", student = "ADULT"):
+def ticket_book(train_on, date, source="深圳北", destination="衡阳东", student = "ADULT"):
     start = areatocode[source]
     to = areatocode[destination]
 
@@ -322,6 +323,8 @@ def book_ticket(train_on, date, source="深圳北", destination="衡阳东", stu
             reqinit.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.3\
     6 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
             initdata = urllib.request.urlopen(reqinit).read().decode("utf-8", "ignore")
+
+            dict_left_ticket = ticket_query(date, source, destination, student)
 
             '''
             # 再爬对应订票信息
@@ -476,19 +479,29 @@ def book_ticket(train_on, date, source="深圳北", destination="衡阳东", stu
             mobileall = re.compile(mobilepat).findall(req8data)
             countryall = re.compile(countrypat).findall(req8data)
             # 选择乘客
+            chooseno = "None"
             if (chooseno != "None"):
                 pass
             else:
                 # 输出乘客信息，由于可能有多位乘客，所以通过循环输出
                 for i in range(0, len(nameall)):
                     print("第" + str(i + 1) + "位用户,姓名:" + str(nameall[i]))
+                '''
                 chooseno = input("请选择要订票的用户的序号，此处只能选择一位哦，如需选择多\
     位，可以自行修改一下代码")
+                '''
+                chooseno = "1"
                 # thisno为对应乘客的下标，比序号少1，比如序号为1的乘客在列表中的下标为0
                 thisno = int(chooseno) - 1
+
+            if len(dict_left_ticket) == 0:
+                print("当前无票，继续监控…")
+                continue
+            '''
             if (trainzy.get(train_no, -1) == -1 or trainzy[train_no] == "无"):
                 print("当前无票，继续监控…")
                 continue
+            '''
             # 总请求1-点击提交后步骤1-确认订单(在此只定二等座，座位类型为1，如需选择多种类型座位，可
             # 以自行修改一下代码使用if判断一下即可)
             checkOrderurl = "https://kyfw.12306.cn/otn/confirmPassenger/checkOrderInfo"
@@ -603,11 +616,15 @@ def book_ticket(train_on, date, source="深圳北", destination="衡阳东", stu
             print(err)
 
 def main():
-    ticket_query("2018-10-10")
-    print(trainzy)
-    #login()
-    #thiscode = input("请输入要预定的车次：")
-    #book_ticket("G1002", )
+    dict_left_ticket = ticket_query("2018-10-10")
+    print(dict_left_ticket)
+
+    pre_login()
+    verification_code = input("请输入验证码，输入第几张图片即可(例如348)\n")
+    login(verification_code)
+
+    train_no = input("请输入要预定的车次：")
+    ticket_book(train_no, "2018-10-10")
 
 if __name__ == '__main__':
     main()
