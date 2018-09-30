@@ -15,8 +15,11 @@ from train_book import ticket_book
 sendMsg = u"{消息助手}：暂时无法回复"
 usageMsg = u"使用方法：\n1.运行CMD命令：cmd xxx (xxx为命令)\n" \
            u"-例如关机命令:\ncmd shutdown -s -t 0 \n" \
-           u"2.获取当前电脑用户：cap\n3.启用消息助手(默认关闭)：ast\n" \
-           u"4.关闭消息助手：astc"
+           u"2.自动刷票：auto\n" \
+           u"3.查票：2018-10-10 或者 2018-10-10 衡阳东 深圳北 1\n" \
+           u"4.获取验证码: G1002 或者G 随机刷票\n" \
+           u"5.输入验证码登录并抢票：V34 " \
+           u"6.打开关闭消息助手：ast 或者 astc"
 flag = 0 #消息助手开关
 
 '''
@@ -24,6 +27,17 @@ nowTime = time.localtime()
 filename = str(nowTime.tm_mday)+str(nowTime.tm_hour)+str(nowTime.tm_min)+str(nowTime.tm_sec)+".txt"
 myfile = open(filename, 'w')
 '''
+
+
+def is_vaild_date(strdate):
+    try:
+        if ":" in strdate:
+            time.strptime(strdate, "%Y-%m-%d %H:%M:%S")
+        else:
+            time.strptime(strdate, "%Y-%m-%d")
+        return True
+    except:
+        return False
 
 @itchat.msg_register('Text')
 def text_reply(msg):
@@ -33,6 +47,9 @@ def text_reply(msg):
     toName = msg['ToUserName']
 
     global train_date
+    global train_from
+    global train_to
+    global contact_id
     global train_no
 
     if toName == "filehelper":
@@ -60,35 +77,62 @@ def text_reply(msg):
             flag = 0
             itchat.send("自动抢票关闭", "filehelper")
 
-        # 2018-10-10
+        # 2018-10-10 深圳北 衡阳东 1
         if message[0:4] == "2018":
-            dict_left_ticket = ticket_query(message)
-
-            if len(dict_left_ticket) != 0:
-                for key, value in dict_left_ticket.items():
-                    print("\"%s\":\"%s\"" % (key, value))
-                    itchat.send(key, "filehelper")
-
-            while flag == 2 and len(dict_left_ticket) == 0:
-                dict_left_ticket = ticket_query(message)
-
-                if len(dict_left_ticket) != 0:
-                    for key, value in dict_left_ticket.items():
-                        print("\"%s\":\"%s\"" % (key, value))
-                        itchat.send(key, "filehelper")
+            while True:
+                message_list = message.split()
+                if is_vaild_date(message_list[0]) == False:
+                    itchat.send("日期不对", "filehelper")
                     break
 
-            flag = 3
-            train_date = message[0:10]
+                if len(message_list) == 1 or len(message_list) == 2:
+                    dict_left_ticket = ticket_query(message_list[0])
+                    train_date = message_list[0]
+                    train_from = "default"
+                    train_to = "default"
+                    contact_id = "default"
+
+                elif len(message_list) == 3:
+                    dict_left_ticket = ticket_query(message_list[0], message_list[1], message_list[2])
+                    train_date = message_list[0]
+                    train_from = message_list[1]
+                    train_to = message_list[2]
+                    contact_id = "default"
+
+                else:
+                    dict_left_ticket = ticket_query(message_list[0], message_list[1], message_list[2])
+                    train_date = message_list[0]
+                    train_from = message_list[1]
+                    train_to = message_list[2]
+                    contact_id = message_list[3]
+
+                while flag == 2 and len(dict_left_ticket) == 0:
+                    dict_left_ticket = ticket_query(message)
 
 
-        # G1002
+                if len(dict_left_ticket) != 0:
+                    keystr = ""
+                    for key, value in dict_left_ticket.items():
+                        print("\"%s\":\"%s\"" % (key, value))
+                        keystr = keystr + key + ":" + value + " "
+                    itchat.send(keystr, "filehelper")
+                else:
+                    itchat.send("没有票", "filehelper")
+
+                flag = 3
+                break
+
+        # G1002/G
         if message[0:1] == "G" and flag == 3:
             pre_login()
             itchat.send('@img@%s' % u'12306_yzm.png', 'filehelper')
+
+            if len(message) == 1:
+                train_no = "auto"
+            else:
+                train_no = message
+            #print(train_no)
             flag = 4
-            train_no = message
-            print(train_no)
 
         # V348
         if message[0:1] == "V" and flag == 4:
@@ -98,9 +142,18 @@ def text_reply(msg):
             if rc == -1:
                 itchat.send("验证码错误", "filehelper")
                 flag = 3
+            elif train_from == "default" and train_to == "default":
+                #print(train_no + train_date)
+                if contact_id == "default":
+                    ticket_book(train_no, train_date)
+                else:
+                    ticket_book(train_no, train_date, "深圳北", "衡阳东", "ADULT", contact_id)
+
             else:
-                print(train_no + train_date)
-                ticket_book(train_no, train_date)
+                if contact_id == "default":
+                    ticket_book(train_no, train_date, train_from, train_to, "ADULT")
+                else:
+                    ticket_book(train_no, train_date, train_from, train_to, "ADULT", contact_id)
 
 
 

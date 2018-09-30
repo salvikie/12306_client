@@ -14,6 +14,7 @@ import http.cookiejar
 import datetime
 import time
 import logging
+import random
 
 #12306账号
 #myuser="770913912@qq.com"
@@ -28,6 +29,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 areatocode = {"深圳北": "IOQ", "衡阳东": "HVQ", "上海": "SHH", "北京": "BJP", "桂林": "GLZ"}
 trainzy = {}
 traindata = {}
+code_list = []
 
 def myAlign(string, length=0):
     if length == 0:
@@ -68,31 +70,35 @@ def ticket_query(date, source="深圳北", destination="衡阳东", student = "A
     # date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
     #date = "2018-10-10"
 
+    trainzy.clear()
+    traindata.clear()
+    code_list.clear()
     '''
     if datetime.datetime.strptime(date, "%Y-%m-%d") < datetime.datetime.now().strftime("%Y-%m-%d"):
         print("查询火车票日期不对\n")
         return
     '''
-
     url = "https://kyfw.12306.cn/otn/leftTicket/queryA?leftTicketDTO.train_date=" + date + "&leftTicketDTO.from_station=" + start + "&leftTicketDTO.to_station=" + to + "&purpose_codes=" + student
 
     context = ssl._create_unverified_context()
-    data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
-    # print(data)
-    # logging.info(data)
+    try:
+        data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
+        # print(data)
+        # logging.info(data)
+        patrst01 = '"result":\[(.*?)\]'
+        #print(len(data))
+        rst01 = re.compile(patrst01).findall(data)[0]
+    except Exception as err:
+        print("没有票\n")
+        return trainzy
 
-    patrst01 = '"result":\[(.*?)\]'
-
-    print(len(data))
-
-    rst01 = re.compile(patrst01).findall(data)[0]
     logging.info(rst01)
     # input("key continue \n")
     allcheci = rst01.split(",")
     checimap_pat = '"map":({.*?})'
     checimap = eval(re.compile(checimap_pat).findall(data)[0])
 
-    code_list = []
+
     secretStr_list = []
     zy_list = []
 
@@ -101,8 +107,7 @@ def ticket_query(date, source="深圳北", destination="衡阳东", student = "A
     print(
         "{0:{6}<5}\t{1:{6}<5}\t{2:{6}<5}\t{3:{6}<8}\t{4:{6}<8}\t{5:{6}<1}".format("车次", "出发站名", "到达站名", "出发时间", "到达时间",
                                                                                   "二等座", chr(32)))
-    trainzy.clear()
-    traindata.clear()
+
 
     for i in range(0, len(allcheci)):
         try:
@@ -140,7 +145,9 @@ def ticket_query(date, source="深圳北", destination="衡阳东", student = "A
 
             secretStr_list.append(thischeci[0].replace('"', ""))
             code_list.append(code)
-            zy_list.append(wz)
+            #zy_list.append(wz)
+            zy_list.append(stime)
+
 
             # print(code+"\t"+fromname+"\t"+toname+"\t"+stime+"\t"+atime+"\t"+str(zy)+"\t"+str(ze)+"\t\
             # "+str(yz)+"\t"+str(wz))
@@ -304,9 +311,11 @@ def login(verification_code, user="997482021@qq.com", password="lq199023132"):
     print("登陆完成")
     return 0
 
-def ticket_book(train_on, date, source="深圳北", destination="衡阳东", student = "ADULT"):
+def ticket_book(train_code, date, source="深圳北", destination="衡阳东", student = "ADULT", contact_id = "1"):
     start = areatocode[source]
     to = areatocode[destination]
+
+
 
     '''
     if datetime.datetime.strptime(date, "%Y-%m-%d") < datetime.datetime.now().strftime("%Y-%m-%d"):
@@ -325,6 +334,17 @@ def ticket_book(train_on, date, source="深圳北", destination="衡阳东", stu
             initdata = urllib.request.urlopen(reqinit).read().decode("utf-8", "ignore")
 
             dict_left_ticket = ticket_query(date, source, destination, student)
+
+            if len(dict_left_ticket) == 0 and len(traindata):
+                print("当前无票，继续监控…")
+                continue
+
+            if train_code == "auto":
+                #train_on = traindata.keys()[random.randint(0, len(traindata)-1)]
+                train_on = code_list[random.randint(0, len(code_list)-1)]
+            else:
+                train_on = train_code
+
 
             '''
             # 再爬对应订票信息
@@ -490,13 +510,11 @@ def ticket_book(train_on, date, source="深圳北", destination="衡阳东", stu
                 chooseno = input("请选择要订票的用户的序号，此处只能选择一位哦，如需选择多\
     位，可以自行修改一下代码")
                 '''
-                chooseno = "1"
+                #chooseno = "1"
+                chooseno = contact_id
                 # thisno为对应乘客的下标，比序号少1，比如序号为1的乘客在列表中的下标为0
                 thisno = int(chooseno) - 1
 
-            if len(dict_left_ticket) == 0:
-                print("当前无票，继续监控…")
-                continue
             '''
             if (trainzy.get(train_no, -1) == -1 or trainzy[train_no] == "无"):
                 print("当前无票，继续监控…")
