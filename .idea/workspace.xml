@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73aecb60-59a5-48ac-b623-a3aa213a1296" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/train_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wechat_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/wechat_client.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +17,11 @@
       <file leaf-file-name="wechat_client.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="109" column="60" lean-forward="true" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+            <state relative-caret-position="192">
+              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+              <folding>
+                <element signature="e#39#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -26,8 +29,8 @@
       <file leaf-file-name="train_book.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_book.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2259">
-              <caret line="523" column="34" lean-forward="true" selection-start-line="523" selection-start-column="34" selection-end-line="523" selection-end-column="34" />
+            <state relative-caret-position="211">
+              <caret line="72" column="17" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="17" />
               <folding>
                 <element signature="e#81#102#0" expanded="true" />
               </folding>
@@ -46,9 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_switch_left_menus</find>
-      <find>_get_left_menus_handle</find>
-      <find>get_item</find>
       <find>_main.window</find>
       <find>AUTO_IPO_MENU_PATH</find>
       <find>COMMON_GRID_CONTROL_ID</find>
@@ -76,6 +76,9 @@
       <find>keys</find>
       <find>traindata</find>
       <find>code_list</find>
+      <find>train_book_main_loop</find>
+      <find>message_list</find>
+      <find>clear</find>
     </findStrings>
     <dirStrings>
       <dir>F:\python_learning\12306_client</dir>
@@ -96,8 +99,8 @@
         <option value="$PROJECT_DIR$/../itchat_client/wechat_client.py" />
         <option value="$PROJECT_DIR$/12306_client.py" />
         <option value="$PROJECT_DIR$/my_12306.py" />
-        <option value="$PROJECT_DIR$/wechat_client.py" />
         <option value="$PROJECT_DIR$/train_book.py" />
+        <option value="$PROJECT_DIR$/wechat_client.py" />
       </list>
     </option>
   </component>
@@ -137,7 +140,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/wechat_client.py" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,7 +210,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23052464" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23052464" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32830626" />
       <window_info anchor="bottom" auto_hide="true" id="Event Log" order="9" sideWeight="0.5015625" side_tool="true" weight="0.32482597" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32830626" />
@@ -216,7 +219,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32830626" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995037" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -432,9 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
           <caret line="45" column="40" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="e#42#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -444,8 +444,8 @@
     <entry file="file://$PROJECT_DIR$/2917553.txt" />
     <entry file="file://$PROJECT_DIR$/train_book.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2259">
-          <caret line="523" column="34" lean-forward="true" selection-start-line="523" selection-start-column="34" selection-end-line="523" selection-end-column="34" />
+        <state relative-caret-position="211">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="17" />
           <folding>
             <element signature="e#81#102#0" expanded="true" />
           </folding>
@@ -454,8 +454,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="109" column="60" lean-forward="true" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        <state relative-caret-position="192">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="e#39#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
