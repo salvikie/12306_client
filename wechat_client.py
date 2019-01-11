@@ -18,7 +18,7 @@ sendMsg = u"{消息助手}：暂时无法回复"
 usageMsg = u"使用方法：\n1.运行CMD命令：cmd xxx (xxx为命令)\n" \
            u"-例如关机命令:\ncmd shutdown -s -t 0 \n" \
            u"2.自动刷票：auto\n" \
-           u"3.查票：2018-10-10 或者 2018-10-10 衡阳东 深圳北 1\n" \
+           u"3.查票：2019-1-31 或者 2019-1-31 衡阳东 深圳北 1\n" \
            u"4.获取验证码: G1002 或者G 随机刷票\n" \
            u"5.输入验证码登录并抢票：V34 \n" \
            u"6.打开关闭消息助手：ast 或者 astc"
@@ -62,7 +62,7 @@ def train_book_main_loop():
 
     while True:
 
-        if len(message_list) != 0 and message_list[0][0:4] == "2018":
+        if len(message_list) != 0 and message_list[0][0:4] == "2019":
             #print(message_list[0])
             if is_vaild_date(message_list[0]) == False:
                 itchat.send("日期不对", "filehelper")
@@ -184,7 +184,7 @@ def text_reply(msg):
             itchat.send("自动抢票关闭", "filehelper")
 
         # 2018-10-10 深圳北 衡阳东 1
-        if message[0:4] == "2018":
+        if message[0:4] == "2019":
             message_list = message.split()
             #print("message_list len %d " % (len(message_list)))
 
